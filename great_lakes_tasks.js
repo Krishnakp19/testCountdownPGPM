@@ -1,0 +1,22 @@
+const tasks = [
+  "🎯 Mission 1: Go to Veeranam and deliver a 20-second mock lecture on 'Why Monday classes should be illegal.' Record your best professor impression.",
+  "🚶 Mission 2: Walk from Spice Route to Satvik while holding a straight face — no smiles, no laughs. If someone cracks you up, restart.",
+  "📚 Mission 3: In the Resource Center, pick a random book and read one line out loud dramatically. Bonus if someone looks up.",
+  "☕ Mission 4: Grab a chai at TOI and talk to a stranger about their most chaotic group project ever.",
+  "💡 Mission 5: Stand near the Vivekananda statue and share your 'Monday Motivation' to the wind like an influencer reel.",
+  "📸 Mission 6: Click a photo of your reflection on the Academic Block glass and caption it 'Future CEO loading...'.",
+  "🎭 Mission 7: Recreate a Shark Tank pitch with your team in Manasarovar. Props allowed. Drama encouraged.",
+  "🍽️ Mission 8: Order the weirdest combo possible at Spice Route and convince someone else to take the first bite.",
+  "👥 Mission 9: Gather 3 people in the ARR lawn and start a spontaneous 'clap wave' until strangers join in.",
+  "🤳 Mission 10: Take a group selfie at Kaveri Hostel entrance titled 'When deadlines meet breakdowns.'",
+  "💬 Mission 11: At Chatterbox, start a conversation using only management buzzwords — 'synergy,' 'leverage,' 'touch base' — you get the idea.",
+  "🎬 Mission 12: Record a 15-second motivational reel at Vivekananda statue pretending to be a life coach.",
+  "🧘 Mission 13: Sit quietly in front of the Resource Center for 2 minutes. No phone. Just vibes. Post a zen caption.",
+  "🎤 Mission 14: At Charlie’s Den, perform a fake TED Talk titled 'Surviving Group Assignments 101.'",
+  "📊 Mission 15: On a classroom whiteboard (Erie, Michigan, or Ontario), draw your version of a 'Success Equation.'",
+  "🎧 Mission 16: Plug in your earphones, walk confidently through the Academic Block like you’re in a movie montage.",
+  "🎯 Mission 17: Create a mini treasure hunt clue using Digii Campus terms (attendance, assignment, output). Share it with a friend.",
+  "🏃 Mission 18: Race a friend from TOI to ARR and yell 'Break-even achieved!' at the finish line.",
+  "📱 Mission 19: Open Instagram at Spice Route and record a 'fake podcast' with someone about your weirdest case competition.",
+  "🌅 Mission 20: Watch the sunset from Mahabalipuram and record a slow-mo walk — MBA life never looked so peaceful."
+];
