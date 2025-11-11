@@ -1,9 +1,9 @@
 (() => {
     const video = document.getElementById('cornerVideoContainer');
     
-    // Video dimensions
-    const videoWidth = 180;
-    const videoHeight = 100;
+    // Video dimensions - PORTRAIT (taller than wide)
+    const videoWidth = 120;
+    const videoHeight = 180;
     
     // Starting position
     let x = 20;
