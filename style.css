@@ -1,0 +1,49 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Merriweather', cursive, Arial, sans-serif;
+}
+
+#bgVideo {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#overlay {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 60px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: center;
+  max-width: 80vw;
+  min-width: 270px;
+  line-height: 1.5;
+  margin: auto;
+  top: 20vh;
+}
+
+#line1, #line3 {
+  font-size: 1.8em;
+  color: #1976d2;
+}
+
+#line2 {
+  font-family: 'Orbitron', monospace, Arial, sans-serif;
+  color: red;
+  font-weight: 700;
+  font-size: 2.2em;
+  margin: 10px 0 10px 0;
+}
+
+@media (max-width: 600px) {
+  #overlay { padding: 15px 5px; max-width: 98vw; }
+  #line1, #line3 { font-size: 1.1em; }
+  #line2 { font-size: 1.4em; }
+}
