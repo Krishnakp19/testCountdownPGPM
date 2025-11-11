@@ -16,7 +16,10 @@ body, html {
 }
 
 #overlay {
-  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 53%; /* tweak this value for desired spacing */
+  transform: translate(-50%, -50%);
   background: rgba(255, 255, 255, 0.85);
   padding: 40px 60px;
   border-radius: 12px;
@@ -25,8 +28,6 @@ body, html {
   max-width: 80vw;
   min-width: 270px;
   line-height: 1.5;
-  margin: auto;
-  top: 20vh;
 }
 
 #line1, #line3 {
