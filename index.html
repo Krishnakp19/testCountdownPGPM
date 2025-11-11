@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown: Great Lakes Institute of Management, Chennai</title>
+  <!-- Primary font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Pacifico', cursive, Arial, sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    #overlay {
+      background: rgba(255,255,255,0.85);
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 80vw;
+      min-width: 270px;
+      line-height: 1.5;
+    }
+    #line1, #line3 {
+      font-size: 1.8em;
+      color: #1976d2;
+      align-items: left;
+    }
+    #line2 {
+      font-family: 'Orbitron', monospace, Arial, sans-serif;
+      color: red;
+      font-weight: 700;
+      font-size: 2.2em;
+      margin: 10px 0 10px 0;
+    }
+    @media (max-width: 600px) {
+      #overlay { padding: 15px 5px; max-width: 98vw; }
+      #line1, #line3 { font-size: 1.1em; }
+      #line2 { font-size: 1.4em; }
+    }
+  </style>
+</head>
+<body>
+  <div id="overlay">
+    <div id="line1">You have</div>
+    <div id="line2"></div>
+    <div id="line3">in Great Lakes Institute of Management, Chennai.</div>
+  </div>
+  <script>
+    const targetDateStr = '2026-04-10T16:00:00';
+
+    function updateCountdown() {
+      const now = new Date();
+      const targetDate = new Date(targetDateStr);
+
+      let diff = targetDate.getTime() - now.getTime();
+      if (diff < 0) {
+        document.getElementById('line1').textContent = "";
+        document.getElementById('line2').textContent = "Your time at Great Lakes Institute of Management, Chennai is complete!";
+        document.getElementById('line3').textContent = "";
+        return;
+      }
+
+      // Inclusive days calculation
+      const todayMid = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const targetMid = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+      const days = Math.floor((targetMid - todayMid) / (1000 * 60 * 60 * 24)) + 1;
+
+      let totalSecs = Math.floor(diff / 1000);
+      const hours = Math.floor((totalSecs % (3600 * 24)) / 3600);
+      const minutes = Math.floor((totalSecs % 3600) / 60);
+      const seconds = totalSecs % 60;
+
+      const timeString =
+        `${pad(days)} days ${pad(hours)} Hours ${pad(minutes)} Minutes ${pad(seconds)} Seconds`;
+
+      document.getElementById('line2').textContent = timeString;
+    }
+
+    function pad(num) {
+      return num.toString().padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
