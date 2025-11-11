@@ -46,15 +46,13 @@ body, html {
     margin: 10px 0 10px 0;
 }
 
-/* Style for corner video container */
+/* Style for corner video container - Compact and bouncing */
 #cornerVideoContainer {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 320px;
-    height: 180px;
+    width: 180px;
+    height: 100px;
     background: rgba(255,255,255,0.2);
-    border-radius: 16px;
+    border-radius: 12px;
     box-shadow: 0 0 8px rgba(0,0,0,0.22);
     overflow: hidden;
     z-index: 10;
@@ -69,7 +67,7 @@ body, html {
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    border-radius: 16px;
+    border-radius: 12px;
 }
 
 /* People of the Day - Now at top of countdown */
@@ -169,10 +167,8 @@ body, html {
         font-size: 1.5em; 
     }
     #cornerVideoContainer { 
-        width: 160px; 
-        height: 90px; 
-        bottom: 10px; 
-        right: 10px; 
+        width: 120px; 
+        height: 68px; 
     }
     #random-images-container {
         gap: 10px;
