@@ -64,7 +64,7 @@ body, html {
 .carousel-track {
     display: flex;
     gap: 15px;
-    animation: scroll-carousel 60s linear infinite;
+    animation: scroll-carousel 40s linear infinite;  /* FASTER: Changed from 60s */
     padding: 10px 0;
 }
 
@@ -236,10 +236,10 @@ body, html {
     border-radius: 12px;
 }
 
-/* Control Buttons Container (Bottom Left) - FIXED POSITION */
+/* Control Buttons Container */
 #control-buttons {
     position: fixed;
-    bottom: 15px;  /* Changed from 55px to 15px */
+    bottom: 15px;
     left: 15px;
     z-index: 1100;
     display: flex;
@@ -294,7 +294,7 @@ body, html {
     display: block;
 }
 
-/* Birthday Section - Bottom Right */
+/* Birthday Section */
 #birthday-container {
     position: fixed;
     bottom: 20px;
@@ -384,6 +384,7 @@ body, html {
     
     .carousel-track {
         gap: 10px;
+        animation: scroll-carousel 30s linear infinite;  /* Even faster on mobile */
     }
     
     #people-of-day-section {
