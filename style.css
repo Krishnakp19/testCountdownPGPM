@@ -1,20 +1,20 @@
-/* Birthday Container - Bottom Right */
+/* Birthday Container - Top Right Corner */
 #birthday-container {
     position: fixed;
-    bottom: 20px;
+    top: 60px; /* Below the task ticker */
     right: 20px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     z-index: 100;
-    max-width: 350px;
-    display: none; /* Hidden by default */
+    max-width: 280px;
+    display: none; /* Hidden by default - shows only when birthdays exist */
 }
 
 #birthday-title {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 15px;
@@ -24,7 +24,7 @@
 #birthday-images {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
 }
 
@@ -62,8 +62,8 @@
 }
 
 .birthday-image {
-    width: 100px;
-    height: 133px;
+    width: 90px;
+    height: 120px;
     object-fit: cover;
     object-position: center 20%;
     border: 3px solid #ffd700;
@@ -73,36 +73,36 @@
 
 .birthday-name {
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 600;
     color: #2c3e50;
     text-align: center;
-    max-width: 100px;
+    max-width: 90px;
     word-wrap: break-word;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
     #birthday-container {
-        bottom: 55px;
+        top: 45px;
         right: 10px;
-        max-width: 180px;
+        max-width: 160px;
         padding: 12px;
     }
     
     #birthday-title {
-        font-size: 14px;
+        font-size: 13px;
         margin-bottom: 10px;
     }
     
     .birthday-image {
-        width: 70px;
-        height: 93px;
+        width: 65px;
+        height: 87px;
     }
     
     .birthday-name {
-        font-size: 10px;
-        max-width: 70px;
+        font-size: 9px;
+        max-width: 65px;
     }
     
     .cake-icon {
