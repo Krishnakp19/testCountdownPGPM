@@ -1,72 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GLIM Chennai Countdown</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLIM Chennai Countdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-  <!-- Background Video -->
-  <video id="bgVideo" autoplay loop muted playsinline>
-    <source src="Static/background.mp4" type="video/mp4" />
-  </video>
-
-  <!-- Task Ticker at Top -->
-  <div id="task-ticker">
-    <div id="ticker-text">Loading task...</div>
-  </div>
-
-  <!-- Random Images Container OUTSIDE Overlay 
-  <div id="random-images-container"></div> 
-
-  <!-- Countdown Overlay (Center) -->
-  <div id="overlay">
-    <!-- Random Images Container (Top of countdown) 
-    <div id="random-images-container"></div> -->
-
-    <!-- Countdown Section -->
-    <div id="line1">You have got</div>
-    <div id="line2">Loading...</div>
-    <div id="line3">left at GLIM Chennai</div>
-  </div>
-
-  <!-- Corner Video -->
-  <div id="cornerVideoContainer">
-    <video id="cornerVideo" autoplay loop muted playsinline>
-      <source src="Static/Roshan.mp4" type="video/mp4" />
+    <!-- Background Video -->
+    <video id="bgVideo" autoplay loop muted playsinline>
+        <source src="Static/background.mp4" type="video/mp4">
     </video>
-  </div>
 
-  <!-- Background Music Toggle Button -->
-  <div id="music-toggle" title="Mute / Unmute Background Music">
-    <button id="musicToggleBtn" aria-label="Toggle background music">
-      🔊
-    </button>
-  </div>
+    <!-- Background Audio (hidden) -->
+    <audio id="backgroundAudio" loop>
+        <source src="Static/background-music.mp3" type="audio/mpeg">
+    </audio>
 
-  <!-- Visitor Counter with HITS Badge 
-  <div id="visitor-counter">
-    <img
-      src="https://hits.sh/krishnakp19.github.io/glimCountdown.svg?style=flat&label=Visitors&color=1976d2&labelColor=2c3e50"
-      alt="Visitor count"
-    />
-  </div> -->
+    <!-- Task Ticker at Top -->
+    <div id="task-ticker">
+        <div id="ticker-text">Loading task...</div>
+    </div>
 
-  <!-- Background Music -->
-  <audio id="backgroundAudio" autoplay loop muted>
-    <source src="Static/background-music.mp3" type="audio/mpeg" />
-  </audio>
+    <!-- People of the Day - OUTSIDE overlay, positioned above it 
+    <div id="people-of-day-section">
+        <div id="people-title">People of the Day</div>
+        <div id="random-images-container"></div>
+        <div id="people-message">Bring in some lore about these people, post it in Chatterbox Instagram page</div>
+    </div> -->
 
-  <!-- JS Files -->
-  <script src="countdown.js"></script>
-  <!--script src="imageSelector.js"></script> -->
-  <script src="videoAnimation.js"></script>
-  <script src="taskTicker.js"></script>
-  <script src="backgroundAudioToggle.js"></script>
+    <!-- Countdown Overlay (Center) -->
+    <div id="overlay">
+        <div id="line1">You have got</div>
+        <div id="line2">Loading...</div>
+        <div id="line3">left at GLIM Chennai</div>
+    </div>
+
+    <!-- Birthday Container (Bottom Right) 
+    <div id="birthday-container">
+        <div id="birthday-title">🎉 Birthday Today! 🎉</div>
+        <div id="birthday-images"></div>
+    </div> -->
+
+    <!-- Corner Video (Bouncing around screen) -->
+    <div id="cornerVideoContainer">
+        <video id="cornerVideo" autoplay loop muted playsinline>
+            <source src="Static/Roshan.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Control Buttons Container (Bottom Left) -->
+    <div id="control-buttons">
+        <button id="musicToggleBtn">🔊 Music</button>
+        <button id="confettiBtn">🎉 Confetti</button>
+    </div>
+
+    <!-- Visitor Counter 
+    <div id="visitor-counter">
+        <img src="https://hits.sh/krishnakp19.github.io/glimCountdown.svg?style=flat&label=Visitors&color=1976d2&labelColor=2c3e50" 
+             alt="Visitor count">
+    </div> -->
+
+    <!-- Scripts -->
+    <script src="countdown.js"></script>
+    <!--script src="imageSelector.js"></script--> 
+    <script src="videoAnimation.js"></script>
+    <script src="taskTicker.js"></script>
+    <!--script src="birthdayDisplay.js"></script-->
+    <script src="backgroundAudioControl.js"></script>
+    <script src="confetti.js"></script>
 </body>
 </html>
-
