@@ -6,7 +6,7 @@
   <title>GLIM Chennai Countdown</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Orbitron:wght@400;700&family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -20,15 +20,15 @@
     <div id="ticker-text">Loading task...</div>
   </div>
 
-  <!-- People of the Day Overlay -->
-  <div id="people-overlay">
-    <span id="people-title">People of the Day</span>
-    <div id="random-images-container"></div>
-    <span id="chatterbox-msg">Bring in some lore about these people, post it in Chatterbox Instagram page</span>
-  </div>
+  <!-- Random Images Container OUTSIDE Overlay -->
+  <div id="random-images-container"></div>
 
-  <!-- Countdown Overlay (Center, pushed lower) -->
+  <!-- Countdown Overlay (Center) -->
   <div id="overlay">
+    <!-- Random Images Container (Top of countdown) -->
+    <div id="random-images-container"></div>
+
+    <!-- Countdown Section -->
     <div id="line1">You have got</div>
     <div id="line2">Loading...</div>
     <div id="line3">left at GLIM Chennai</div>
