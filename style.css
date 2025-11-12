@@ -185,6 +185,30 @@ body, html {
     max-width: 90px;
 }
 
+#music-toggle {
+  position: fixed;
+  bottom: 55px; /* Positioned above visitor counter */
+  left: 15px;
+  z-index: 1100;
+}
+
+#musicToggleBtn {
+  background-color: #1976d2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  padding: 8px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+#musicToggleBtn:hover {
+  background-color: #0d47a1;
+}
+
 /* Visitor Counter Style */
 #visitor-counter {
     position: fixed;
