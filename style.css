@@ -47,7 +47,7 @@ body, html {
     }
 }
 
-/* Image Carousel - Below Task Ticker */
+/* Image Carousel - Below Task Ticker (JavaScript-based infinite scroll) */
 .carousel-container {
     position: fixed;
     top: 50px;
@@ -64,8 +64,8 @@ body, html {
 .carousel-track {
     display: flex;
     gap: 15px;
-    animation: scroll-carousel 30s linear infinite;
     padding: 10px 0;
+    /* No CSS animation - using JavaScript requestAnimationFrame instead */
 }
 
 .carousel-item {
@@ -88,19 +88,6 @@ body, html {
     height: 100%;
     object-fit: cover;
     object-position: center 20%;
-}
-
-@keyframes scroll-carousel {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-33.333%);
-    }
-}
-
-.carousel-container:hover .carousel-track {
-    animation-play-state: paused;
 }
 
 /* People of the Day Section - OUTSIDE overlay */
@@ -285,6 +272,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s ease;
 }
 
 #cornerVideo {
@@ -442,7 +430,6 @@ body, html {
     
     .carousel-track {
         gap: 10px;
-        animation: scroll-carousel 20s linear infinite;
     }
     
     #people-of-day-section {
