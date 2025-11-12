@@ -38,20 +38,12 @@
     </video>
   </div>
 
-<!-- Background music toggle -->
-<div id="music-toggle" title="Mute / Unmute Background Music">
-  <button id="musicToggleBtn" aria-label="Toggle background music">
-    🔊
-  </button>
-</div>
-
-<!-- Visitor Counter with HITS Badge -->
-<div id="visitor-counter">
-  <img
-    src="https://hits.sh/krishnakp19.github.io/glimCountdown.svg?style=flat&label=Visitors&color=1976d2&labelColor=2c3e50"
-    alt="Visitor count"
-  />
-</div>
+  <!-- Background Music Toggle Button -->
+  <div id="music-toggle" title="Mute / Unmute Background Music">
+    <button id="musicToggleBtn" aria-label="Toggle background music">
+      🔊
+    </button>
+  </div>
 
   <!-- Visitor Counter with HITS Badge -->
   <div id="visitor-counter">
@@ -64,6 +56,7 @@
   <!-- Background Music -->
   <audio id="backgroundAudio" autoplay loop muted>
     <source src="Static/background-music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
   </audio>
 
   <!-- JS Files -->
@@ -71,7 +64,6 @@
   <script src="imageSelector.js"></script>
   <script src="videoAnimation.js"></script>
   <script src="taskTicker.js"></script>
-  <script src="backgroundAudioControl.js"></script>
+  <script src="backgroundAudioToggle.js"></script>
 </body>
 </html>
-
