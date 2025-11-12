@@ -24,28 +24,13 @@ body, html {
     color: white;
     padding: 12px 0;
     z-index: 1001;
-    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-#ticker-text {
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 16px;
-    font-weight: 600;
-    padding-left: 100%;
-    animation: scroll-left 35s linear infinite;
-}
-@keyframes scroll-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-/* People of the Day Overlay */
 #people-overlay {
     position: absolute;
     left: 50%;
-    top: 90px; /* Below top ticker */
+    top: 90px;
     transform: translateX(-50%);
     background: rgba(255,255,255,0.87);
     padding: 24px 40px 18px 40px;
@@ -113,7 +98,7 @@ body, html {
     padding: 5px 10px;
     background: rgba(236, 240, 241, 0.96);
     border-radius: 4px;
-    white-space: nowrap; /* Prevent line wrapping! */
+    white-space: nowrap;
     word-break: break-all;
     max-width: 100%;
 }
@@ -126,16 +111,16 @@ body, html {
     margin: 16px 0 0 0;
     font-weight: 700;
     text-shadow: 0 2px 10px rgba(255,255,255,0.6);
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap;
     display: block;
     text-align: center;
 }
 
-/* Countdown Overlay Further Down */
+/* Countdown overlay positioned below people overlay, margin space added. */
 #overlay {
     position: absolute;
     left: 50%;
-    top: 360px; /* Push lower to make space for people overlay */
+    top: 295px; /* Push lower so it's below #people-overlay */
     transform: translateX(-50%);
     background: rgba(255, 255, 255, 0.55);
     padding: 40px 60px;
@@ -145,7 +130,7 @@ body, html {
     max-width: 80vw;
     min-width: 270px;
     line-height: 1.5;
-    z-index: 300;
+    z-index: 1010; /* high, but not above video! */
 }
 
 #line1, #line3 {
@@ -161,6 +146,7 @@ body, html {
     margin: 10px 0 10px 0;
 }
 
+/* Make corner video always in front of overlays and UI */
 #cornerVideoContainer {
     position: fixed;
     width: 120px;
@@ -169,7 +155,7 @@ body, html {
     border-radius: 12px;
     box-shadow: 0 0 8px rgba(0,0,0,0.22);
     overflow: hidden;
-    z-index: 10;
+    z-index: 9999 !important; /* BIGGEST, ensures it is in foreground */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -235,7 +221,7 @@ body, html {
     .profile-image { width: 65px; height: 83px; }
     .image-name { font-size: 0.98em; max-width: 70px; }
     #chatterbox-msg { font-size: 0.96em; }
-    #overlay { padding: 29px 10px; max-width: 95vw; top: 285px; }
+    #overlay { padding: 29px 10px; max-width: 95vw; top: 240px; }
     #line1, #line3 { font-size: 1.1em; }
     #line2 { font-size: 1.4em; }
     #cornerVideoContainer { width: 90px; height: 135px; }
