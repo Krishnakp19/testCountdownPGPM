@@ -1,7 +1,7 @@
 const IMAGE_LIST_FILE = 'Static/images.txt';
 const IMAGE_FOLDER = 'Static/Profile Pics/';
 
-// Shuffle array using Fisher-Yates algorithm
+// Shuffle array
 function shuffleArray(array) {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -11,35 +11,34 @@ function shuffleArray(array) {
     return shuffled;
 }
 
-// Load and populate carousel (optimized)
+// Load carousel images
 async function loadCarouselImages() {
     try {
-        const response = await fetch(IMAGE_LIST_FILE, {
-            cache: 'force-cache' // Use browser cache
-        });
+        const response = await fetch(IMAGE_LIST_FILE);
         
         if (!response.ok) {
             throw new Error('Failed to load images');
         }
         
         const text = await response.text();
-        const images = text.split('\n')
-                          .map(line => line.trim())
-                          .filter(line => line.length > 0);
+        let images = text.split('\n')
+                        .map(line => line.trim())
+                        .filter(line => line.length > 0);
         
         console.log(`✓ Loaded ${images.length} images`);
         
-        // Shuffle for random order
+        // Limit to 30 images for better performance (randomly selected)
         const shuffledImages = shuffleArray(images);
+        const limitedImages = shuffledImages.slice(0, 30);
+        
+        console.log(`✓ Using ${limitedImages.length} images for performance`);
         
         // Create carousel
-        createCarousel(shuffledImages);
+        createCarousel(limitedImages);
         
     } catch (error) {
         console.error('✗ Error loading carousel:', error);
-        // Hide carousel on error
-        const container = document.querySelector('.carousel-container');
-        if (container) container.style.display = 'none';
+        document.querySelector('.carousel-container').style.display = 'none';
     }
 }
 
@@ -51,60 +50,54 @@ function createCarousel(images) {
         return;
     }
     
-    // Only duplicate twice (not 3x or 5x) - reduces DOM nodes by 40-60%
+    // Duplicate images twice for seamless loop
     const allImages = [...images, ...images];
     
-    // Use DocumentFragment for batch DOM insertion (much faster)
+    // Use DocumentFragment
     const fragment = document.createDocumentFragment();
     
-    // Create all elements at once
-    allImages.forEach((imageName, index) => {
+    allImages.forEach((imageName) => {
         const imgWrapper = document.createElement('div');
         imgWrapper.className = 'carousel-item';
         
-        const img = new Image(); // Better performance than createElement('img')
+        const img = new Image();
         img.src = `${IMAGE_FOLDER}${imageName}`;
-        img.alt = imageName.split('.')[0]; // Remove extension
-        img.loading = 'lazy'; // Native lazy loading
-        img.decoding = 'async'; // Async decoding - prevents blocking
+        img.alt = '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
         
-        // Silent error handling
         img.onerror = () => imgWrapper.remove();
         
         imgWrapper.appendChild(img);
         fragment.appendChild(imgWrapper);
     });
     
-    // Single DOM insertion (much faster than multiple appendChild)
     track.appendChild(fragment);
     
-    // Calculate dynamic animation duration based on image count
+    // Calculate duration
     const itemWidth = 95; // 80px + 15px gap
     const totalWidth = images.length * itemWidth;
-    const duration = Math.max(40, totalWidth / 25); // Adjusted for smooth speed
+    const duration = Math.max(30, totalWidth / 20); // Faster speed
     
-    // Set CSS custom properties (no JavaScript animation needed)
+    console.log(`✓ Animation duration: ${duration}s for ${images.length} images`);
+    
+    // Set CSS variables
     track.style.setProperty('--carousel-duration', `${duration}s`);
     
     // Random start position
-    const randomOffset = Math.floor(Math.random() * images.length);
-    const startPosition = -(randomOffset * itemWidth);
-    track.style.setProperty('--carousel-start', `${startPosition}px`);
+    const randomStart = Math.floor(Math.random() * images.length);
+    track.style.setProperty('--carousel-start', `${-(randomStart * itemWidth)}px`);
     
-    // Trigger CSS animation after paint (prevents layout thrashing)
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            track.classList.add('carousel-animate');
-        });
-    });
-    
-    console.log(`✓ Carousel: ${allImages.length} items (${images.length} unique) - ${duration}s duration`);
+    // IMPORTANT: Force animation start with delay
+    setTimeout(() => {
+        track.classList.add('carousel-animate');
+        console.log('✓ Carousel animation started');
+    }, 100);
 }
 
-// Initialize - check if DOM is ready
+// Initialize
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadCarouselImages);
 } else {
-    // DOM already loaded
     loadCarouselImages();
 }
