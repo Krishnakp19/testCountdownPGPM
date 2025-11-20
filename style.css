@@ -404,10 +404,10 @@ object-fit: contain;
 border-radius: 12px;
 }
 
-/* Control Buttons */
+/* Control Buttons - Moved up to make space for visitor counter */
 #control-buttons {
 position: fixed;
-bottom: 15px;
+bottom: 55px;
 left: 15px;
 z-index: 1100;
 display: flex;
@@ -443,7 +443,7 @@ background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 background: linear-gradient(135deg, #5568d3 0%, #63398b 100%);
 }
 
-/* Visitor Counter */
+/* Visitor Counter - Now visible at the bottom */
 #visitor-counter {
 position: fixed;
 bottom: 15px;
@@ -605,11 +605,20 @@ height: 135px;
 #control-buttons {
 flex-direction: column;
 gap: 5px;
-bottom: 10px;
+bottom: 50px;
+left: 10px;
 }
 #musicToggleBtn,
 #confettiBtn {
 padding: 6px 10px;
 font-size: 14px;
+}
+#visitor-counter {
+bottom: 10px;
+left: 10px;
+padding: 8px 12px;
+}
+#visitor-counter img {
+height: 18px;
 }
 }
