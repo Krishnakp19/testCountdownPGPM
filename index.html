@@ -48,7 +48,7 @@
         <div id="line3">left at GLIM Chennai</div>
         
         <!-- Secret Santa Button -->
-        <button id="secretSantaBtn" onclick="window.open('https://form.finalform.so/forms/xnmz0eIO', '_blank')">
+        <button id="secretSantaBtn" onclick="showInstructionPopup()">
             <span class="santa-icon">🎅</span>
             <span class="button-text">Join Secret Santa!</span>
             <span class="santa-icon">🎁</span>
@@ -88,7 +88,26 @@
              alt="Visitor count">
     </div>
 
-    <!-- Scripts -->
+    <!-- Secret Santa Instructions Popup Modal -->
+    <div id="instructionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeInstructionPopup()">&times;</span>
+            <h2 class="modal-title">🎅 Secret Santa Instructions 🎁</h2>
+            
+            <!-- Image Container for Instructions -->
+            <div class="instruction-image-container">
+                <img src="Static/Event Rules.png" alt="Secret Santa Instructions" class="instruction-image">
+            </div>
+            
+            <!-- Terms Agreement Button -->
+            <button class="agree-btn" onclick="openSecretSantaForm()">
+                <span class="check-icon">✓</span>
+                I Agree to the Above Terms
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts ---->
     <script src="js/countdown.js"></script>
     <!--script src="js/imageSelector.js"></script--> 
     <script src="js/videoAnimation.js"></script>
@@ -98,6 +117,32 @@
     <script src="js/confetti.js"></script>
     <script src="js/carousel.js"></script>
     <!--script src="js/progressBar.js"></script-->
+    
+    <!-- Secret Santa Popup Script -->
+    <script>
+        // Show instruction popup
+        function showInstructionPopup() {
+            document.getElementById('instructionModal').style.display = 'flex';
+        }
+
+        // Close instruction popup
+        function closeInstructionPopup() {
+            document.getElementById('instructionModal').style.display = 'none';
+        }
+
+        // Open Secret Santa form after agreeing to terms
+        function openSecretSantaForm() {
+            closeInstructionPopup();
+            window.open('https://form.finalform.so/forms/xnmz0eIO', '_blank');
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('instructionModal');
+            if (event.target === modal) {
+                closeInstructionPopup();
+            }
+        }
+    </script>
 </body>
 </html>
-
