@@ -112,21 +112,6 @@ object-fit: cover;
 object-position: center 20%;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-.carousel-container {
-top: 40px;
-height: 90px;
-}
-.carousel-item {
-width: 60px;
-height: 75px;
-}
-.carousel-track {
-gap: 10px;
-}
-}
-
 /* People of the Day Section */
 #people-of-day-section {
 position: absolute;
